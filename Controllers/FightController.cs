@@ -26,9 +26,15 @@ namespace dotnet_rpg.Controllers
         }
 
         [HttpPost("Skill")]
-        public async Task<ActionResult<ServiceResponse<AttackResultDto>>> SkillAttacl(SkillAttackDto request)
+        public async Task<ActionResult<ServiceResponse<AttackResultDto>>> SkillAttack(SkillAttackDto request)
         {
             return Ok(await _fightService.SkillAttack(request));
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<ServiceResponse<FightResultDto>>> Fight(FightRequestDto request)
+        {
+            return Ok(await _fightService.Fight(request));
         }
     }
 }
