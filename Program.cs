@@ -28,7 +28,16 @@ builder.Services.AddSwaggerGen(c => {
     c.OperationFilter<SecurityRequirementsOperationFilter>();
 });
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
+
+
+
 builder.Services.AddScoped<ICharacterService, CharacterService>();
+
+
+
+
+
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
